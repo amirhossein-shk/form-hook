@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  margin: 0 auto;
+  padding: 32px;
+
+  form {
+    width: 40%;
+  }
+}

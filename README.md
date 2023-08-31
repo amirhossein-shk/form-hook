@@ -1,46 +1,78 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Form Manager Custom Hook
 
-## Available Scripts
+This app is developed for managing forms in react.
 
-In the project directory, you can run:
+## Installation
+For the installation process, you need to install node.js on your system.
+if you have not any node version installed please see this link for installation: [nodejs](https://nodejs.org/)
 
-### `npm start`
+```bash
+npm install
+```
+After completing the installation of all packages insert below command:
+```bash
+npm start
+```
+If all steps done completely you should see app is running on localhost:3000
+    
+## Deployment
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To deploy this project run
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+  npm run build
+```
 
-### `npm test`
+## Technologies Used
+`html`, `scss`, `css modules`, `yup`, `javascript`, `react`, `typescript`, `react-router-dom`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- Managing controlled forms
+- Managing uncontrolled forms
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage/Examples
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+to create a form you need a list of form input object(s), for example:
 
-### `npm run eject`
+```javascript
+const userFormObj = [
+  {
+    type: "text",
+    name: "fullName",
+    label: "Full Name",
+    placeholder: "Full Name",
+    validationRule: yup.string().required(),
+  },
+  {
+    type: "text",
+    name: "email",
+    label: "Email",
+    placeholder: "Email",
+    validationRule: yup.string().email().required(),
+  },
+]
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+for validation, this custom hook uses from yup library, also for validation you need to write some yup commands in validationRule propery.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+after define input objects, you need to call useForm custom hook in your component:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```javascript
+const { renderFormInputs } = useForm(userFormObj, handleSubmit);
+return <>{renderFormInputs()}</>;
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+if you want to make your form uncontrolled, then you must pass a true boolean value in end of useForm() parameters:
 
-## Learn More
+```javascript
+const { renderFormInputs } = useForm(userFormObj, handleSubmit, true);
+return <>{renderFormInputs()}</>;
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- AmirHossein
+
