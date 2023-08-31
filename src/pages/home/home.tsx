@@ -1,5 +1,5 @@
 import * as React from "react";
-import styles from "./Styles.module.scss";
+import styles from "./home.module.scss";
 import UserForm from "../../components/controlledForms/userForm";
 import SearchForm from "../../components/uncontrolledForms/searchForm";
 
