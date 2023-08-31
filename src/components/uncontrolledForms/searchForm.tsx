@@ -26,7 +26,12 @@ const SearchForm: React.FC = () => {
   };
 
   const { renderFormInputs } = useForm(searchFormObj, handleSubmit, true);
-  return <>{renderFormInputs()}</>;
+  return (
+    <>
+      <div>Uncontrolled Form:</div>
+      <div>{renderFormInputs()}</div>
+    </>
+  );
 };
 
 export default SearchForm;

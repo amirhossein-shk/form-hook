@@ -61,7 +61,12 @@ const UserForm: React.FC = () => {
   };
 
   const { renderFormInputs } = useForm(userFormObj, handleSubmit);
-  return <>{renderFormInputs()}</>;
+  return (
+    <>
+      <div>Controlled Form:</div>
+      <div>{renderFormInputs()}</div>
+    </>
+  );
 };
 
 export default UserForm;
