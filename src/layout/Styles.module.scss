@@ -1,13 +1,19 @@
-.header {
+.header, .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 46px;
-  background-color: yellow;
+  box-shadow: 1px 1px 10px 1px #efefef;
 }
 
-.footer {
-  height: 46px;
-  background-color: yellow;
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color:#8a8a8a;
+  letter-spacing: 1px;
 }
 
 .mainContent {
   height: calc(100vh - 92px);
+  overflow-y: auto;
 }
