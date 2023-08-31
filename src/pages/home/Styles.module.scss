@@ -7,8 +7,16 @@
   flex-grow: 1;
   margin: 0 auto;
   padding: 32px;
+
+  > div{
+    width: 40%;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #727272
+  }
   
   form {
-    width: 40%;
+    width: 100%;
   }
 }
